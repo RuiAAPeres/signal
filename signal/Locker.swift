@@ -17,14 +17,14 @@ final class Locker<Item> {
         _value = value
     }
     
-    func modify(f: Item -> Item) {
+    func tranform(f: Item -> Item) {
         dispatch_barrier_async(lock) {
             self._value = f(self._value)
         }
     }
     
     func write(newValue: Item)  {
-        modify { _ in newValue }
+        tranform { _ in newValue }
     }
     
     var value: Item{

@@ -22,7 +22,7 @@ extension Signal {
     }
     
     func subscribe(subscriber: Subscriber<T>) {
-        subscribers.modify {
+        subscribers.tranform {
             return $0 + [subscriber]
         }
     }
