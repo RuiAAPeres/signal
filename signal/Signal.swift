@@ -7,11 +7,11 @@
 //
 
 final class Signal<T> {
-    let subscribers: Locker<[T -> Void]> = Locker([])
+   private let subscribers: Locker<[Subscriber<T>]> = Locker([])
     
     func update(value: T) {
         for subscriber in subscribers.value {
-            subscriber(value)
+            subscriber.next(value)
         }
     }
 }

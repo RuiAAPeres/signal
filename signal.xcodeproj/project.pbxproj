@@ -11,6 +11,7 @@
 		C78C5E471CE3D74E00C0CBD6 /* signalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78C5E461CE3D74E00C0CBD6 /* signalTests.swift */; };
 		C78C5E541CE3D86800C0CBD6 /* Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78C5E531CE3D86800C0CBD6 /* Signal.swift */; };
 		C78C5E561CE3D98600C0CBD6 /* Locker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78C5E551CE3D98600C0CBD6 /* Locker.swift */; };
+		C79E72C51CE3E3DC00B2823D /* Subscriber.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79E72C41CE3E3DC00B2823D /* Subscriber.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +32,7 @@
 		C78C5E481CE3D74E00C0CBD6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C78C5E531CE3D86800C0CBD6 /* Signal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Signal.swift; sourceTree = "<group>"; };
 		C78C5E551CE3D98600C0CBD6 /* Locker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Locker.swift; sourceTree = "<group>"; };
+		C79E72C41CE3E3DC00B2823D /* Subscriber.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Subscriber.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +77,7 @@
 			children = (
 				C78C5E3C1CE3D74E00C0CBD6 /* Info.plist */,
 				C78C5E531CE3D86800C0CBD6 /* Signal.swift */,
+				C79E72C41CE3E3DC00B2823D /* Subscriber.swift */,
 				C78C5E551CE3D98600C0CBD6 /* Locker.swift */,
 			);
 			path = signal;
@@ -196,6 +199,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C79E72C51CE3E3DC00B2823D /* Subscriber.swift in Sources */,
 				C78C5E541CE3D86800C0CBD6 /* Signal.swift in Sources */,
 				C78C5E561CE3D98600C0CBD6 /* Locker.swift in Sources */,
 			);
