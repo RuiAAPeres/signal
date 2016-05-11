@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C78C5E3B1CE3D74E00C0CBD6 /* signal.h in Headers */ = {isa = PBXBuildFile; fileRef = C78C5E3A1CE3D74E00C0CBD6 /* signal.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C78C5E421CE3D74E00C0CBD6 /* signal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C78C5E371CE3D74E00C0CBD6 /* signal.framework */; };
 		C78C5E471CE3D74E00C0CBD6 /* signalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78C5E461CE3D74E00C0CBD6 /* signalTests.swift */; };
+		C78C5E541CE3D86800C0CBD6 /* Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78C5E531CE3D86800C0CBD6 /* Signal.swift */; };
+		C78C5E561CE3D98600C0CBD6 /* Locker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78C5E551CE3D98600C0CBD6 /* Locker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -24,11 +25,12 @@
 
 /* Begin PBXFileReference section */
 		C78C5E371CE3D74E00C0CBD6 /* signal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = signal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C78C5E3A1CE3D74E00C0CBD6 /* signal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = signal.h; sourceTree = "<group>"; };
 		C78C5E3C1CE3D74E00C0CBD6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C78C5E411CE3D74E00C0CBD6 /* signalTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = signalTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C78C5E461CE3D74E00C0CBD6 /* signalTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signalTests.swift; sourceTree = "<group>"; };
 		C78C5E481CE3D74E00C0CBD6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C78C5E531CE3D86800C0CBD6 /* Signal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Signal.swift; sourceTree = "<group>"; };
+		C78C5E551CE3D98600C0CBD6 /* Locker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Locker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,8 +73,9 @@
 		C78C5E391CE3D74E00C0CBD6 /* signal */ = {
 			isa = PBXGroup;
 			children = (
-				C78C5E3A1CE3D74E00C0CBD6 /* signal.h */,
 				C78C5E3C1CE3D74E00C0CBD6 /* Info.plist */,
+				C78C5E531CE3D86800C0CBD6 /* Signal.swift */,
+				C78C5E551CE3D98600C0CBD6 /* Locker.swift */,
 			);
 			path = signal;
 			sourceTree = "<group>";
@@ -93,7 +96,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C78C5E3B1CE3D74E00C0CBD6 /* signal.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -194,6 +196,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C78C5E541CE3D86800C0CBD6 /* Signal.swift in Sources */,
+				C78C5E561CE3D98600C0CBD6 /* Locker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -310,6 +314,7 @@
 		C78C5E4C1CE3D74E00C0CBD6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -320,12 +325,14 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.signal.signal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		C78C5E4D1CE3D74E00C0CBD6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -378,6 +385,7 @@
 				C78C5E4D1CE3D74E00C0CBD6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C78C5E4E1CE3D74E00C0CBD6 /* Build configuration list for PBXNativeTarget "signalTests" */ = {
 			isa = XCConfigurationList;
@@ -386,6 +394,7 @@
 				C78C5E501CE3D74E00C0CBD6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
