@@ -8,4 +8,8 @@
 
 struct Subscriber<T> {
     let next: T -> Void
+    
+    init(_ next: T -> Void) {
+        self.next = next
+    }
 }

@@ -8,23 +8,27 @@
 
 import Foundation
 
-final class Locker<T> {
+final class Locker<Item> {
     
     private let lock = dispatch_queue_create("locker.queue", DISPATCH_QUEUE_CONCURRENT)
-    private var _value: T
+    private var _value: Item
     
-    init(_ value: T) {
+    init(_ value: Item) {
         _value = value
     }
     
-    func write(newValue: T)  {
+    func modify(f: Item -> Item) {
         dispatch_barrier_async(lock) {
-            self._value = newValue
+            self._value = f(self._value)
         }
     }
     
-    var value: T {
-        var readValue: T!
+    func write(newValue: Item)  {
+        modify { _ in newValue }
+    }
+    
+    var value: Item{
+        var readValue: Item!
         dispatch_sync(lock) {[_value] in
             readValue = _value
         }
